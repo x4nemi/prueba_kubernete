@@ -1,13 +1,3 @@
-FROM node:13-alpine
+FROM nginx:alpine
+COPY . /usr/share/nginx/html
 
-WORKDIR /app
-
-COPY package.json package-lock.json ./
-
-RUN npm install --production
-
-COPY . .
-
-EXPOSE 3000
-
-CMD node index.js
