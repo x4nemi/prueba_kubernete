@@ -1,0 +1,36 @@
+# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2022-05-07T03:17:36Z"
+  labels:
+    app: proyecto-comp
+  name: proyecto-comp
+  namespace: default
+  resourceVersion: "146926"
+  uid: fd0773e7-1d18-4f9f-8ee8-ccfb5cfcf3a3
+spec:
+  clusterIP: 10.106.192.187
+  clusterIPs:
+  - 10.106.192.187
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 32661
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: proyecto-comp
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer:
+    ingress:
+    - hostname: localhost
