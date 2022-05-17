@@ -1,13 +1,7 @@
-FROM node:13-alpine
-
+FROM node:17-alpine3.14
+ENV NODE_ENV development
 WORKDIR /app
-
-COPY package.json package-lock.json ./
-
-RUN npm install --production
-
+COPY package*.json ./
+RUN npm install
 COPY . .
-
-EXPOSE 3000
-
-CMD node index.js
+CMD ["npm", "start"]
